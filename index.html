@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 <body>
     <header>
         <h1>Minha Lista de Tarefas</h1>
-        
-        <div id='funcionamento'>
-            <p>Clique duas vezes em um item para marcá-lo como completo</p>
-        </div>
-        <div>
-            <input id='texto-tarefa'>
-        </div>
 
+        
+    </div>
+
+    <div id='funcionamento'>
+        <p>Clique duas vezes em um item para marcá-lo como completo</p>
+    </div>
     
+    <form action=''>
+        <p>O que deseja adicionar a lista?</p>
+        <input type='text' id='texto-tarefa' name='Adicionar Tarefa'>
+        <button id='criar-tarefa' type='button'>Criar tarefa</button>
+    </form>
+    
+    <ol id='lista-tarefas'>
+    </ol>
+
         <script type='text/javascript' src='script.js'></script>
     </header>
-    
+
 </body>
-</html>
+</html> 
