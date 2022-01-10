@@ -14,10 +14,11 @@ botãoDaTarefa.addEventListener('click', addTarefa);
 
 function AddCinza (event) {
     for(index = 0; index < ElementoDaLista.length; index += 1){
-        ElementoDaLista[index].style.backgroundColor = 'white';
+        if(ElementoDaLista[index].classList.value === 'ElementoDaLista') {
+            ElementoDaLista[index].style.backgroundColor = 'white';
     }
 
-
+    }
     for(index = 0; index < ElementoDaLista.length; index += 1){
        if(event.target === ElementoDaLista[index]){
           event.target.style.backgroundColor = 'rgb(128, 128, 128)';
@@ -25,4 +26,38 @@ function AddCinza (event) {
     }
 }
 listaDeTarefas.addEventListener('click', AddCinza);
-console.log(ElementoDaLista); 
+
+function doubleClick () {
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        if(ElementoDaLista[index].style.backgroundColor === 'rgb(128, 128, 128)' && ElementoDaLista[index].classList.value === 'ElementoDaLista'){
+            ElementoDaLista[index].classList.add('completed');
+        }
+        else if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
+            ElementoDaLista[index].classList.remove('completed');
+        }
+    }
+}
+listaDeTarefas.addEventListener('dblclick', doubleClick);
+
+
+let apagar = document.getElementById('apaga-tudo');
+let itensAll = document.querySelectorAll('ElementoDaLista');
+function apagarItem () {
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+}
+apagar.addEventListener('click', apagarItem)
+console.log(itensAll); 
